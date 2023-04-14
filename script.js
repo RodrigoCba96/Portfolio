@@ -37,5 +37,25 @@ function efectoHabilidades() {
         document.getElementById("bd").classList.add("barra-progreso3");
         document.getElementById("ps").classList.add("barra-progreso4");
     }
-
 }
+
+const btn = document.querySelector('.btn-enviar');
+
+document.querySelector('form').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  btn.value = 'Enviando...';
+
+  const serviceID = 'service_e88dq4c';
+  const templateID = 'plantilla_4igg17s';
+
+  emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.value = 'Enviar Mensaje';
+      alert('¡Mensaje enviado correctamente!');
+      document.querySelector('form').reset();
+    }, (err) => {
+      btn.value = 'Enviar Mensaje';
+      alert('Ha ocurrido un error al enviar el mensaje: ' + err);
+    });
+});

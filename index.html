@@ -8,6 +8,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="style.css">
+    
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <script type="text/javascript">
+    emailjs.init('kGyuvOuYB1CPikiwZ')
+    </script>
+
     <title>RC Desarrollador Web</title>
 </head>
 
@@ -53,7 +61,7 @@
     <!-- SECCION SOBRE MI -->
     <section id="sobremi">
         <div class="contenedor-foto">
-            <img src="./img/foto.jpeg" alt="">
+            <img src="" alt="">
         </div>
         <div class="sobremi">
             <p class="titulo-seccion">Sobre Mi</p>
@@ -215,19 +223,19 @@
     <section id="contacto">
         <h3 class="titulo-seccion">Contactate ahora </h3>
         <div class="contenedor-form">
-            <form action="">
+            <form action="" method="POST">
                 <div class="fila mitad">
-                    <input type="text" placeholder="Nombre Completo *" class="input-mitad">
-                    <input type="email" placeholder="Dirección de Email" class="input-mitad">
+                    <input type="text" placeholder="Nombre Completo *" class="input-mitad" name="nombre">
+                    <input type="email" placeholder="Dirección de Email" class="input-mitad" name="email">
                 </div>
                 <div class="fila">
-                    <input type="text" placeholder="Tema..." class="input-full">
+                    <input type="text" placeholder="Tema..." class="input-full" name="tema">
                 </div>
                 <div class="fila">
-                    <textarea name="" id="" cols="30" rows="10" placeholder="Tu Mensaje..." class="input-full"></textarea>
+                    <textarea name="" id="" cols="30" rows="10" placeholder="Tu Mensaje..." class="input-full" name="mensaje"></textarea>
                 </div>
 
-                <input type="submit" value="Enviar Mensaje" class="btn-enviar">
+                <input type="submit" value="Enviar Mensaje" class="btn-enviar" name="button">
             </form>
         </div>
     </section>
