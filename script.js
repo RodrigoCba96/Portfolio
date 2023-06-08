@@ -1,60 +1,73 @@
-//Función que me aplica el estilo a la opciòn seleccionada y quita la previamente seleccionada
+// Función que aplica el estilo a la opción seleccionada y quita la previamente seleccionada
 function seleccionar(link) {
-    var opciones = document.querySelectorAll('#links  a');
-    opciones[0].className = "";
-    opciones[1].className = "";
-    opciones[2].className = "";
-    opciones[3].className = "";
-    opciones[4].className = "";
-    link.className = "seleccionado";
-
-    //Hacemos desaparecer el menu una vez que se ha seleccionado una opcion
-    //en modo responsive
-    var x = document.getElementById("nav");
-    x.className = "";
-}
-
-//función que muestra el menu responsive
-function responsiveMenu() {
-    var x = document.getElementById("nav");
-    if (x.className === "") {
-        x.className = "responsive";
+    var opciones = document.querySelectorAll('#links a');
+    opciones.forEach(function(opcion) {
+      opcion.classList.remove('seleccionado');
+    });
+    link.classList.add('seleccionado');
+  
+    // Hacemos desaparecer el menú una vez que se ha seleccionado una opción en modo responsive
+    var x = document.getElementById('nav');
+    x.className = '';
+  }
+  
+  // Función que muestra el menú responsive
+  function responsiveMenu() {
+    var x = document.getElementById('nav');
+    if (x.className === '') {
+      x.className = 'responsive';
     } else {
-        x.className = "";
+      x.className = '';
     }
-}
-
-//detecto el scrolling para aplicar la animación del la barra de habilidades
-window.onscroll = function() { efectoHabilidades() };
-
-//funcion que aplica la animación de la barra de habilidades
-function efectoHabilidades() {
-    var skills = document.getElementById("skills");
-    var distancia_skills = window.innerHeight - skills.getBoundingClientRect().top;
-    if (distancia_skills >= 300) {
-        document.getElementById("html").classList.add("barra-progreso1");
-        document.getElementById("js").classList.add("barra-progreso2");
-        document.getElementById("bd").classList.add("barra-progreso3");
-        document.getElementById("ps").classList.add("barra-progreso4");
+  }
+  
+  // Detectar el desplazamiento para aplicar la animación de la barra de habilidades
+  window.onscroll = function() {
+    efectoHabilidades();
+  };
+  
+  // Función que aplica la animación de la barra de habilidades
+  function efectoHabilidades() {
+    var skills = document.getElementById('skills');
+    var distanciaSkills = window.innerHeight - skills.getBoundingClientRect().top;
+    if (distanciaSkills >= 300) {
+      document.getElementById('html').classList.add('barra-progreso1');
+      document.getElementById('js').classList.add('barra-progreso2');
+      document.getElementById('bd').classList.add('barra-progreso3');
+      document.getElementById('ps').classList.add('barra-progreso4');
     }
-}
+  }
+  const btn = document.querySelector('.btn-enviar');
+const inputField = document.querySelector('.input-mitad');
 
-const btn = document.querySelector('.btn-enviar');
+inputField.addEventListener('input', function() {
+  if (this.value.trim() !== '') {
+    btn.disabled = false; // Habilitar el botón si el campo no está vacío
+  } else {
+    btn.disabled = true; // Deshabilitar el botón si el campo está vacío
+  }
+});
 
 document.querySelector('form').addEventListener('submit', function(event) {
   event.preventDefault();
 
+  if (inputField.value.trim() === '') {
+    alert('Por favor, completa el campo de texto antes de enviar el mensaje.');
+    return;
+  }
+
   btn.value = 'Enviando...';
 
   const serviceID = 'service_e88dq4c';
-  const templateID = 'plantilla_4igg17s';
+  const templateID = 'template_q9lng8j';
 
   emailjs.sendForm(serviceID, templateID, this)
     .then(() => {
       btn.value = 'Enviar Mensaje';
       alert('¡Mensaje enviado correctamente!');
       document.querySelector('form').reset();
-    }, (err) => {
+    })
+    .catch((err) => {
       btn.value = 'Enviar Mensaje';
       alert('Ha ocurrido un error al enviar el mensaje: ' + err);
     });
