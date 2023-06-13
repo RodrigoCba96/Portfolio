@@ -60,15 +60,25 @@ document.querySelector('form').addEventListener('submit', function(event) {
 
   const serviceID = 'service_e88dq4c';
   const templateID = 'template_q9lng8j';
-
   emailjs.sendForm(serviceID, templateID, this)
-    .then(() => {
-      btn.value = 'Enviar Mensaje';
-      alert('¡Mensaje enviado correctamente!');
-      document.querySelector('form').reset();
-    })
-    .catch((err) => {
-      btn.value = 'Enviar Mensaje';
-      alert('Ha ocurrido un error al enviar el mensaje: ' + err);
+  .then(() => {
+    btn.value = 'Enviar Mensaje';
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Something went wrong!',
+      footer: '<a href="">Why do I have this issue?</a>',
     });
+    document.querySelector('form').reset();
+  })
+  .catch((err) => {
+    btn.value = 'Enviar Mensaje';
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Your work has been saved',
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  });
 });
