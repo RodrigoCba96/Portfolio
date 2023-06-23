@@ -622,3 +622,26 @@
                 margin-bottom: 15px;
             }
         }
+
+
+        .fila {
+            display: flex;
+            flex-wrap: wrap;
+          }
+        
+          .proyecto {
+            width: 100%;
+            padding: 10px;
+          }
+        
+          @media (min-width: 768px) {
+            .proyecto {
+              width: 50%;
+            }
+          }
+        
+          @media (min-width: 1024px) {
+            .proyecto {
+              width: 33.33%;
+            }
+          }
