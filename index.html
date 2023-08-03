@@ -4,20 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     
     <link rel="stylesheet" href="style.css">
     
-    <script type="text/javascript"
-    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com/dist/email.min.js"></script>
 
     <script type="text/javascript">
-    emailjs.init('kGyuvOuYB1CPikiwZ')
+        emailjs.init('kGyuvOuYB1CPikiwZ');
     </script>
 
     <title>RC Desarrollador Web Front-End</title>
 </head>
+
 
 <body>
     <!-- SECCION I N I C I O -->
@@ -179,50 +179,52 @@
 
     <!-- SECCION PORTAFOLIO -->
     <section class="portfolio">
-        <h1 class="titleP">MIS PROYECTOS</h1>
-        <div class="project-container">
-            <div class="project">
-                <a href="https://hsi.larioja.gob.ar/auth/login?returnUrl=%2Fhome">
-                <img src="./img/hsi.png" alt="#">
-              <div class="overlay">
-                <h2 class="project-title">Historia Clínica Digital</h2>
-                <p class="project-description">Proyecto con aportes de Front-End, con tecnología Angular,
-                     asimilando el labor del Portal del paciente, HSI es un portal para profesionales de la salud,
-                      donde tienen acceso a la creación y revisión de datos de pacientes</p>
-              </div>
-            </div>
-        
-            <div class="project">
-                <img src="./img/portal.jpeg" alt="#">
-                <a href="http://128.201.239.7/login" target="_blank">
+    <h1 class="titleP">MIS PROYECTOS</h1>
+    <div class="project-container">
+        <div class="project">
+            <a href="https://hsi.larioja.gob.ar/auth/login?returnUrl=%2Fhome" target="_blank">
+                <img src="./img/hsi.png" alt="Historia Clínica Digital">
+                <div class="overlay">
+                    <h2 class="project-title">Historia Clínica Digital</h2>
+                    <p class="project-description">Proyecto con aportes de Front-End, con tecnología Angular, asimilando el labor del Portal del paciente. HSI es un portal para profesionales de la salud, donde tienen acceso a la creación y revisión de datos de pacientes.</p>
+                </div>
+            </a>
+        </div>
 
-              <div class="overlay">
-                <h2 class="project-title">Portal del paciente</h2>
-                <p class="project-description">Proyecto con aportes de Front-End, con tecnología Angular, donde creo una interfaz accesible para el paciente para que este pueda interactuar y comprender el sitio y obtener sus datos médicos personales</p>
-              </div>
-            </div>
-          </div>
-        
-          <div class="project-container">
-            <div class="project">
-                <img src="./img/dulce.png" alt="#">
-                <a href="https://rodrigocba96.github.io/RodrigoCba96.io/" target="_blank">
-              <div class="overlay">
-                <h2 class="project-title">Dulces Antojos La Rioja</h2>
-                <p class="project-description">Sitio web de contacto para una tienda de pastelería, donde facilita el contacto de cliente y vendedor por medio de las redes sociales en un botón</p>
-              </div>
-            </div>
-        
-            <div class="project">
-                <img src="./img/tienda.png" alt="#">
-                <a href="https://rodrigocba96.github.io/PlataformaDigital/" target="_blank">
-              <div class="overlay">
-                <h2 class="project-title">Plataforma 64</h2>
-                <p class="project-description">Prototipo de tienda Digital, un proyecto con tematica retro para el trabajo final del curso de Javascript</p>
-              </div>
-            </div>
-          </div>
-      </section>
+        <div class="project">
+            <a href="http://128.201.239.7/login" target="_blank">
+                <img src="./img/portal.jpeg" alt="Portal del paciente">
+                <div class="overlay">
+                    <h2 class="project-title">Portal del paciente</h2>
+                    <p class="project-description">Proyecto con aportes de Front-End, con tecnología Angular, donde creo una interfaz accesible para el paciente para que este pueda interactuar y comprender el sitio y obtener sus datos médicos personales.</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="project-container">
+        <div class="project">
+            <a href="https://rodrigocba96.github.io/RodrigoCba96.io/" target="_blank">
+                <img src="./img/dulce.png" alt="Dulces Antojos La Rioja">
+                <div class="overlay">
+                    <h2 class="project-title">Dulces Antojos La Rioja</h2>
+                    <p class="project-description">Sitio web de contacto para una tienda de pastelería, donde facilita el contacto de cliente y vendedor por medio de las redes sociales en un botón.</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="project">
+            <a href="https://santosudario.shop/" target="_blank">
+                <img src="./img/sudario.jpeg" alt="Santo Sudario Web">
+                <div class="overlay">
+                    <h2 class="project-title">Santo Sudario Web</h2>
+                    <p class="project-description">Proyecto de Sitio Web con catálogo de productos, realizado para la gráfica "Santo Sudario".</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
     <!-- C O N T A C T O -->
     <section id="contacto">
         <h3 class="titulo-seccion">Contactate ahora </h3>
@@ -236,7 +238,7 @@
                     <input type="text" placeholder="Tema..." class="input-full" name="tema">
                 </div>
                 <div class="fila">
-                    <textarea name="" id="" cols="30" rows="10" placeholder="Tu Mensaje..." class="input-full" name="mensaje"></textarea>
+                    <textarea name="mensaje" id="" cols="30" rows="10" placeholder="Tu Mensaje..." class="input-full"></textarea>
                 </div>
 
                 <input type="submit" value="Enviar Mensaje" class="btn-enviar" name="button">
